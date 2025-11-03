@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: main #Important to define environment in job
     needs: build
-    if: ${{ !failure() && !canceled() }}
+    if: ${{ !failure() && !cancelled() }}
 
     steps:
     - uses: actions/checkout@v3
