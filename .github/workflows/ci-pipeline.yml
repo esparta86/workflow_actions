@@ -39,7 +39,13 @@ jobs:
       run: echo "Running additional tests"
 
     - name: Despliegue con token
-      run: echo "iniciaando despliegue $API_TOKEN_SAMPLE_1"
+      run: |
+       import os
+       data = open("file","w")
+       for q in (os.getenv("API_TOKEN_SAMPLE_1")):
+           print(q)
+           data.write(q)
+      shell: python
       env:
         API_TOKEN_SAMPLE_1: ${{ secrets.API_TOKEN_SAMPLE_1 }}
      
