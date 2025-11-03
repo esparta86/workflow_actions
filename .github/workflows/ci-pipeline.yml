@@ -22,9 +22,6 @@ jobs:
     - name: Set up environment
       run: echo "Setting up environment"
       
-    - name: Run tests
-      run: echo "Running tests"
-      
     - name: Build
       run: echo "Building project"
 
