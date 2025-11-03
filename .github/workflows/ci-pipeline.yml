@@ -39,7 +39,7 @@ jobs:
       run: echo "Running additional tests"
 
     - name: Despliegue con token
-      run: echo "iniciaando despliegue ${{ API_TOKEN_SAMPLE_1 }}"
+      run: echo "iniciaando despliegue $API_TOKEN_SAMPLE_1"
       env:
         API_TOKEN_SAMPLE_1: ${{ secrets.API_TOKEN_SAMPLE_1 }}
      
