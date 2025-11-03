@@ -27,3 +27,13 @@ jobs:
       
     - name: Build
       run: echo "Building project"
+      
+  tests:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Run additional tests
+      run: echo "Running additional tests"
