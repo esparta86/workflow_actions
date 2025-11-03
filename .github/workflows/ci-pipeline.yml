@@ -27,7 +27,7 @@ jobs:
       
     - name: Build
       run: echo "Building project"
-      
+
   tests:
     runs-on: ubuntu-latest
     needs: build
@@ -37,3 +37,9 @@ jobs:
 
     - name: Run additional tests
       run: echo "Running additional tests"
+
+    - name: Despliegue con token
+      run: echo "iniciaando despliegue ${{ API_TOKEN_SAMPLE_1 }}"
+      env:
+        API_TOKEN_SAMPLE_1: ${{ secrets.API_TOKEN_SAMPLE_1 }}
+     
