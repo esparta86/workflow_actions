@@ -29,8 +29,8 @@ jobs:
       run: echo "Building project"
 
     - name: identify
-      if: github.event_name == 'push'
-      run: echo "it was push"
+      if: github.event_name == 'push' || github.event_name == 'pull_request'
+      run: echo "it was push or pull request"
 
   tests:
     runs-on: ubuntu-latest
