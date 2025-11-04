@@ -34,6 +34,7 @@ jobs:
       id: random-gen
       run: |
        import random
+       import os
        random_number = random.randint(1,20)
 
        output_path = os.environ.get('GITHUB_OUTPUT')
