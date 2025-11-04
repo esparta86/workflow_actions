@@ -40,7 +40,7 @@ jobs:
     - name: getRandomPython
       shell: python
       id: random-gen
-      if: github.event.inputs['min_value'] == '0' || github.event.inputs['max_value'] == '0' || github.event.inputs['min_value'] == '' || github.event.inputs['max_value'] == ''
+      if: github.event.inputs['min_value'] == 'S' || github.event.inputs['max_value'] == 'Z' || github.event.inputs['min_value'] == '' || github.event.inputs['max_value'] == ''
       run: |
        import random
        import os
