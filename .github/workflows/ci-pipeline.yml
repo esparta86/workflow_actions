@@ -52,7 +52,7 @@ jobs:
     - name: use the random random_number
       run: |
        echo " random number python was ${{ steps.random-gen.outputs.random_number }} \n"
-       echo "random number bash was ${{ step.randomBash.outputs.random_number}}"
+       echo "random number bash was ${{ steps.randomBash.outputs.random_number}}"
 
 
 
