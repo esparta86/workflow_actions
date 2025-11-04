@@ -1,0 +1,12 @@
+{
+  "name": "dependency-test-project",
+  "version": "1.0.0",
+  "description": "A minimal project to test npm ci and Node.js setup.",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.2"
+  }
+}
