@@ -11,6 +11,14 @@ on:
         description: 'Deployment environment'
         required: true
         default: 'staging'
+      min_value:
+        type: string
+        description: 'MIN value'
+        default: '0'
+      max_value:
+        type: string
+        description: 'MAX value'
+        default: '0'
 
 jobs:
   build:
@@ -43,6 +51,7 @@ jobs:
 
     - name: getRandomBash
       id: randomBash
+      if: github.event.inputs.min_value == 0 || github.event.inputs.max_value == 0
       run: |
        MIN=1
        MAX=20
