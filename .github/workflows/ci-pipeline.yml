@@ -29,7 +29,7 @@ jobs:
       if: github.event_name == 'push' || github.event_name == 'pull_request'
       run: echo "it was push or pull request"
 
-    - name: getRandom
+    - name: getRandomPython
       shell: python
       id: random-gen
       run: |
@@ -41,9 +41,19 @@ jobs:
        with open(output_path,'a') as f:
          f.write(f"random_number={random_number}\n")
 
+    - name: getRandomBash
+      id: randomBash
+      run: |
+       MIN=1
+       MAX=20
+       RANDOM_NUMBER=$((RANDOM %(MAX - MIN + 1) + MIN))
+       echo "random_number=$RANDOM_NUMBER" >> $GITHUB_OUTPUT
+
     - name: use the random random_number
       run: |
-       echo " random number was ${{ steps.random-gen.outputs.random_number }} "
+       echo " random number python was ${{ steps.random-gen.outputs.random_number }} \n"
+       echo "random number bash was ${{ step.randomBash.outputs.random_number}}"
+
 
 
 
