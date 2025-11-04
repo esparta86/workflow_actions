@@ -40,7 +40,7 @@ jobs:
     - name: getRandomPython
       shell: python
       id: random-gen
-      if: github.event.inputs.min_value == '0' || github.event.inputs.max_value == '0'
+      if: ${{ github.event.inputs.min_value == '0' || github.event.inputs.max_value == '0' }}
       run: |
        import random
        import os
@@ -52,7 +52,7 @@ jobs:
 
     - name: getRandomBash
       id: randomBash
-      if: github.event.inputs.min_value == '0' || github.event.inputs.max_value == '0'
+      if: ${{ github.event.inputs.min_value == '0' || github.event.inputs.max_value == '0' }}
       run: |
        MIN=1
        MAX=20
@@ -60,7 +60,7 @@ jobs:
        echo "random_number=$RANDOM_NUMBER" >> $GITHUB_OUTPUT
 
     - name: use the random random_number
-      if: github.event.inputs.min_value == '0' || github.event.inputs.max_value == '0'
+      if: ${{ github.event.inputs.min_value == '0' || github.event.inputs.max_value == '0' }}
       run: |
        echo " random number python was ${{ steps.random-gen.outputs.random_number }} \n"
        echo "random number bash was ${{ steps.randomBash.outputs.random_number}}"
